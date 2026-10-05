@@ -1,0 +1,17 @@
+{
+  "name": "modern-guidance-mcp",
+  "env": {
+    "PORT": {
+      "value": "8080"
+    },
+    "NODE_OPTIONS": {
+      "value": "--max-old-space-size=400"
+    }
+  },
+  "options": {
+    "allow-unauthenticated": true,
+    "memory": "512Mi",
+    "cpu": "1",
+    "port": 8080
+  }
+}
