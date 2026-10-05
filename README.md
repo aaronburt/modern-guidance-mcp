@@ -4,6 +4,8 @@ A thin MCP server exposing [`modern-web-guidance`](https://www.npmjs.com/package
 
 Wraps **162 Markdown guides** across 16 categories (CSS, performance, forms, UI behaviors, security, and more). 161 of them are reachable through `search`; all 162 can be fetched by ID with `retrieve`.
 
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/aaronburt/modern-guidance-mcp.git)
+
 ## Tools
 
 ### `search(query, limit?)`
@@ -136,6 +138,12 @@ docker compose -f docker-compose.release.yml up
 Runs `gcr.io/distroless/nodejs24-debian12:nonroot` — no shell, no `curl`, no package manager. Use TCP probes or the app's own `/healthz`. Image size is roughly 280 MB, dominated by the embedding model and the 6 MB compressed vector index.
 
 Compose caps the container at 512 MB with `--max-old-space-size=400`. Observed usage is 253 MB idle after warmup, peaking around 355 MB under load. Raise the heap cap and the container limit together — a container `SIGKILL` arrives before V8 reports heap exhaustion.
+
+## Deploy to Google Cloud Run
+
+Deploy directly to Google Cloud Run with one click:
+
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/aaronburt/modern-guidance-mcp.git)
 
 ## Known limitations
 
