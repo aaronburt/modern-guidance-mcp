@@ -1,7 +1,6 @@
 services:
   mwg-mcp:
-    image: ${DOCKER_IMAGE:-ghcr.io/aaronburt/modern-guidance-mcp:latest}
-    build: .
+    image: ghcr.io/aaronburt/modern-guidance-mcp:latest
     ports:
       - "8080:8080"
     environment:

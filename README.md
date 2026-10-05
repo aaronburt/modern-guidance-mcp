@@ -121,8 +121,16 @@ It covers protocol handshake, routing, input validation, functional search/retri
 
 ## Docker
 
+Build and run locally:
+
 ```bash
 docker compose up
+```
+
+Or run the prebuilt release image from GHCR:
+
+```bash
+docker compose -f docker-compose.release.yml up
 ```
 
 Runs `gcr.io/distroless/nodejs24-debian12:nonroot` — no shell, no `curl`, no package manager. Use TCP probes or the app's own `/healthz`. Image size is roughly 280 MB, dominated by the embedding model and the 6 MB compressed vector index.
